@@ -1,0 +1,18 @@
+<h3>{{'PRINTS' | translate}}</h3>
+
+<button class="btn btn-success" routerLink="/print/add">{{ 'ADD_PRINT' | translate }}</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">{{'NAME' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="cursor: pointer" *ngFor="let print of prints$ | async">
+    <th scope="row">{{print.id}}</th>
+    <td>{{print.name}}</td>
+  </tr>
+  </tbody>
+</table>

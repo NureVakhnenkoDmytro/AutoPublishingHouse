@@ -1,0 +1,23 @@
+<button class="btn btn-primary" (click)="onDownloadPdf()">{{"DOWNLOAD_PDF" | translate}}</button>
+
+<div id="report">
+  <table class="table table-sm">
+    <thead>
+    <tr>
+      <th scope="col">{{"NAME" | translate}}</th>
+      <th scope="col">{{"COUNT" | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of report$ | async">
+      <td>{{r.name}}</td>
+      <td>{{r.count}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>{{"SUM" | translate}}</td>
+      <td>{{getContainersSumPrice(report$ | async)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

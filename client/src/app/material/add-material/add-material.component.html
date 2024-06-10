@@ -1,0 +1,21 @@
+<form class="w-50" [formGroup]="form">
+  <div class="input-group mb-3">
+    <input class="form-control" required type="text" formControlName="name" name="trip-start" placeholder="{{'NAME' | translate}}">
+  </div>
+
+  <div class="input-group mb-3">
+    <input class="form-control" required type="text" formControlName="content" name="trip-start" placeholder="{{'CONTENT' | translate}}">
+  </div>
+
+  <div class="input-group mb-3">
+    <input class="form-control" required type="text" formControlName="format" name="trip-start" placeholder="{{'FORMAT' | translate}}">
+  </div>
+
+  <div class="form-group mb-3">
+    <select required class="form-control" formControlName="dyeId">
+      <option *ngFor="let dye of dyes$ | async" [value]="dye.id">{{dye.name}}</option>
+    </select>
+  </div>
+
+  <button class="btn btn-success" type="submit" (click)="onAddMaterial()">{{ 'ADD_MATERIAL' | translate}}</button>
+</form>

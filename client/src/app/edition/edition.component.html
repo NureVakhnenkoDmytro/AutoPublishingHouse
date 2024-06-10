@@ -1,0 +1,24 @@
+<h3>{{'EDITION' | translate}}</h3>
+
+<button class="btn btn-success" routerLink="/edition/add">{{ 'ADD_EDITION' | translate }}</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">{{'NAME' | translate}}</th>
+    <th scope="col">{{'OPERATOR' | translate}}</th>
+    <th scope="col">{{'PRINT' | translate}}</th>
+    <th scope="col">{{'COUNT' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="cursor: pointer" *ngFor="let edition of editions$ | async">
+    <th scope="row">{{edition.id}}</th>
+    <td>{{edition.material.name}}</td>
+    <td>{{edition.user.name}}</td>
+    <td>{{edition.printingPress.name}}</td>
+    <td>{{edition.count}}</td>
+  </tr>
+  </tbody>
+</table>

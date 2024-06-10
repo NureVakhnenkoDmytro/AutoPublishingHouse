@@ -1,0 +1,30 @@
+<ng-container *ngIf="containers$ | async as machines">
+    <h2>Id: {{machineId}}</h2>
+
+    <div><b>{{'VALUE' | translate}}: </b> {{machines.value}}</div>
+
+    <button class="btn btn-success" routerLink="./add-container">
+      {{'ADD_CONTAINER' | translate}}
+    </button>
+
+    <div>{{'CONTAINERS' | translate}}: </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{'EAT' | translate}}</th>
+                <th scope="col">{{'PRICE' | translate}}</th>
+                <th scope="col">{{'LOADING_TIME' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let machine of machines">
+                <th scope="row">{{machine.id}}</th>
+                <td>{{machine.eat.name}}</td>
+                <td>{{machine.eat.price}}</td>
+                <td>{{machine.createdTime | date : 'short'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

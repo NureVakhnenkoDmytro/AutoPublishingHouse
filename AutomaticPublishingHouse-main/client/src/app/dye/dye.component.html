@@ -1,0 +1,18 @@
+<h3>{{'Dyes' | translate}}</h3>
+
+<button class="btn btn-success" routerLink="/dye/add">{{ 'ADD_DYE' | translate }}</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">{{'NAME' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="cursor: pointer" *ngFor="let dye of dyes$ | async">
+    <th scope="row">{{dye.id}}</th>
+    <td>{{dye.name}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<form class="w-50" [formGroup]="form">
+  <div class="form-group mb-3">
+    <select required class="form-control" formControlName="userId">
+      <option *ngFor="let user of users$ | async" [value]="user.id">{{user.name}}</option>
+    </select>
+  </div>
+  <div class="form-group mb-3">
+    <select required class="form-control" formControlName="printingPressId">
+      <option *ngFor="let print of prints$ | async" [value]="print.id">{{print.name}}</option>
+    </select>
+  </div>
+  <div class="form-group mb-3">
+    <select required class="form-control" formControlName="materialId">
+      <option *ngFor="let material of materials$ | async" [value]="material.id">{{material.name}}</option>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <input required formControlName="count" type="number" class="form-control" placeholder="Count" aria-label="Count"
+           aria-describedby="basic-addon1">
+  </div>
+
+  <button class="btn btn-success" type="submit" (click)="onAddEdition()">{{'ADD_EDITION' | translate}}</button>
+</form>

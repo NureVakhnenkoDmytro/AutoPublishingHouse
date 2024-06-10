@@ -1,0 +1,6 @@
+<form class="w-50" [formGroup]="form">
+  <div class="input-group mb-3">
+    <input class="form-control" required type="text" formControlName="name" name="trip-start" placeholder="{{'NAME' | translate}}">
+  </div>
+  <button class="btn btn-success" type="submit" (click)="onAddEdition()">{{ 'ADD_PRINT' | translate}}</button>
+</form>

@@ -1,0 +1,22 @@
+<h3>{{'MACHINES' | translate}}</h3>
+
+<button class="btn btn-success" routerLink="/machines/add">{{ 'ADD_MACHINE' | translate }}</button>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{'STATE' | translate}}</th>
+        <th scope="col">{{'VALUE' | translate}}</th>
+        <th scope="col">{{'CONTAINERS' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="cursor: pointer" *ngFor="let machine of machines$ | async" routerLink="/machines/{{machine.id}}">
+        <th scope="row">{{machine.id}}</th>
+        <td>{{machine.state}}</td>
+        <td>{{machine.value}}</td>
+        <td>{{machine.containers.length}}</td>
+      </tr>
+    </tbody>
+  </table>
